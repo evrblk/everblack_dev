@@ -9,6 +9,7 @@ deployment:
   targets:
     - name: production
       url: s3://everblack.dev?region=eu-west-1
+      cloudFrontDistributionID: E9PHBSJ3MBNM0
 
 markup:
     highlight:
