@@ -1,0 +1,436 @@
+baseURL: https://everblack.dev/
+languageCode: en-us
+title: Everblack
+
+params:
+  googleAnalyticsID: G-LFSV9TCP1M
+
+deployment:
+  targets:
+    - name: production
+      url: s3://everblack.dev?region=eu-west-1
+
+markup:
+    highlight:
+#        anchorLineNos = false
+        codeFences: true
+#        guessSyntax = false
+#        hl_Lines = ''
+        hl_inline: false
+#        lineAnchors = ''
+#        lineNoStart = 1
+#        lineNos = false
+#        lineNumbersInTable = true
+#        noClasses = true
+#        noHl = false
+        style: github
+        tabWidth: 4
+
+menus:
+    moab:
+    - name: How it works
+      weight: 10
+    - name: API Reference (Preview)
+      weight: 20
+    - name: Everblack Cloud
+      weight: 30
+
+#    - name: Getting Started
+#      pageRef: /docs/moab/getting-started/
+#      parent: How it works
+#      weight: 1
+    - name: Concepts
+      pageRef: /docs/moab/concepts/
+      parent: How it works
+      weight: 2
+    - name: Retries
+      pageRef: /docs/moab/retries/
+      parent: How it works
+      weight: 3
+    - name: Unique Tasks
+      pageRef: /docs/moab/unique-tasks/
+      parent: How it works
+      weight: 4
+    - name: Threads
+      pageRef: /docs/moab/threads/
+      parent: How it works
+      weight: 5
+    - name: Expiration
+      pageRef: /docs/moab/expiration/
+      parent: How it works
+      weight: 6
+    - name: Dequeuing Settings
+      pageRef: /docs/moab/dequeuing-settings/
+      parent: How it works
+      weight: 7
+    - name: Schedules
+      pageRef: /docs/moab/schedules/
+      parent: How it works
+      weight: 8
+
+    - name: CreateQueue
+      pageRef: /docs/moab/api/preview/create_queue/
+      parent: API Reference (Preview)
+      weight: 1
+    - name: CreateSchedule
+      pageRef: /docs/moab/api/preview/create_schedule/
+      parent: API Reference (Preview)
+      weight: 2
+    - name: DeleteQueue
+      pageRef: /docs/moab/api/preview/delete_queue/
+      parent: API Reference (Preview)
+      weight: 3
+    - name: DeleteSchedule
+      pageRef: /docs/moab/api/preview/delete_schedule/
+      parent: API Reference (Preview)
+      weight: 4
+    - name: Dequeue
+      pageRef: /docs/moab/api/preview/dequeue/
+      parent: API Reference (Preview)
+      weight: 5
+    - name: Enqueue
+      pageRef: /docs/moab/api/preview/enqueue/
+      parent: API Reference (Preview)
+      weight: 6
+    - name: GetQueue
+      pageRef: /docs/moab/api/preview/get_queue/
+      parent: API Reference (Preview)
+      weight: 7
+    - name: GetSchedule
+      pageRef: /docs/moab/api/preview/get_schedule/
+      parent: API Reference (Preview)
+      weight: 8
+    - name: GetTask
+      pageRef: /docs/moab/api/preview/get_task/
+      parent: API Reference (Preview)
+      weight: 9
+    - name: ListQueues
+      pageRef: /docs/moab/api/preview/list_queues/
+      parent: API Reference (Preview)
+      weight: 10
+    - name: PurgeQueue
+      pageRef: /docs/moab/api/preview/purge_queue/
+      parent: API Reference (Preview)
+      weight: 11
+    - name: ReportStatus
+      pageRef: /docs/moab/api/preview/report_status/
+      parent: API Reference (Preview)
+      weight: 12
+    - name: RestartTasks
+      pageRef: /docs/moab/api/preview/restart_tasks/
+      parent: API Reference (Preview)
+      weight: 13
+    - name: UpdateQueue
+      pageRef: /docs/moab/api/preview/update_queue/
+      parent: API Reference (Preview)
+      weight: 14
+    - name: UpdateSchedule
+      pageRef: /docs/moab/api/preview/update_schedule/
+      parent: API Reference (Preview)
+      weight: 15
+
+#    - name: Pricing
+#      pageRef: /docs/moab/pricing/
+#      parent: Everblack Cloud
+#      weight: 1
+    - name: Service Limits
+      pageRef: /docs/moab/limits/
+      parent: Everblack Cloud
+      weight: 2
+
+    iam:
+    - name: How it works
+      weight: 10
+    - name: API Reference (Preview)
+      weight: 20
+    - name: Everblack Cloud
+      weight: 30
+
+    - name: Concepts
+      pageRef: /docs/iam/concepts/
+      parent: How it works
+      weight: 1
+
+    - name: CreateApiKey
+      pageRef: /docs/iam/api/preview/create_api_key/
+      parent: API Reference (Preview)
+      weight: 1
+    - name: CreateRole
+      pageRef: /docs/iam/api/preview/create_role/
+      parent: API Reference (Preview)
+      weight: 2
+    - name: CreateUser
+      pageRef: /docs/iam/api/preview/create_user/
+      parent: API Reference (Preview)
+      weight: 3
+    - name: DeleteApiKey
+      pageRef: /docs/iam/api/preview/delete_api_key/
+      parent: API Reference (Preview)
+      weight: 4
+    - name: DeleteRole
+      pageRef: /docs/iam/api/preview/delete_role/
+      parent: API Reference (Preview)
+      weight: 5
+    - name: DeleteUser
+      pageRef: /docs/iam/api/preview/delete_user/
+      parent: API Reference (Preview)
+      weight: 6
+    - name: GetApiKey
+      pageRef: /docs/iam/api/preview/get_api_key/
+      parent: API Reference (Preview)
+      weight: 7
+    - name: GetRole
+      pageRef: /docs/iam/api/preview/get_role/
+      parent: API Reference (Preview)
+      weight: 8
+    - name: GetUser
+      pageRef: /docs/iam/api/preview/get_user/
+      parent: API Reference (Preview)
+      weight: 9
+    - name: ListApiKeys
+      pageRef: /docs/iam/api/preview/list_api_keys/
+      parent: API Reference (Preview)
+      weight: 10
+    - name: ListRoles
+      pageRef: /docs/iam/api/preview/list_roles/
+      parent: API Reference (Preview)
+      weight: 11
+    - name: ListUsers
+      pageRef: /docs/iam/api/preview/list_users/
+      parent: API Reference (Preview)
+      weight: 12
+    - name: UpdateRole
+      pageRef: /docs/iam/api/preview/update_role/
+      parent: API Reference (Preview)
+      weight: 14
+    - name: UpdateUser
+      pageRef: /docs/iam/api/preview/update_user/
+      parent: API Reference (Preview)
+      weight: 15
+
+    - name: Service Limits
+      pageRef: /docs/iam/limits/
+      parent: Everblack Cloud
+      weight: 1
+
+    api:
+    - name: Working with API
+      weight: 10
+    - name: Common Data Structures
+      weight: 20
+
+    - name: Authentication
+      pageRef: /docs/api/authentication/
+      parent: Working with API
+      weight: 1
+    - name: Endpoints
+      pageRef: /docs/api/endpoints/
+      parent: Working with API
+      weight: 2
+    - name: Authorization
+      pageRef: /docs/api/authorization/
+      parent: Working with API
+      weight: 3
+
+    - name: Timezones
+      pageRef: /docs/api/timezones/
+      parent: Common Data Structures
+      weight: 1
+
+#    bison:
+#    - name: How it works
+#      weight: 10
+#    - name: API Reference (Preview)
+#      weight: 20
+#    - name: Everblack Cloud
+#      weight: 30
+#
+#    - name: Concepts
+#      pageRef: /docs/bison/concepts/
+#      parent: How it works
+#      weight: 1
+#
+#    - name: CreateBucket
+#      pageRef: /docs/bison/api/preview/create_bucket/
+#      parent: API Reference (Preview)
+#      weight: 1
+#
+#    - name: Service Limits
+#      pageRef: /docs/bison/limits/
+#      parent: Everblack Cloud
+#      weight: 1
+
+
+    monstera:
+    - name: How it works
+      weight: 10
+    - name: Design principles
+      weight: 20
+    - name: Developing
+      weight: 30
+
+    - name: Overview
+      pageRef: /docs/monstera/overview/
+      parent: How it works
+      weight: 1
+    - name: Cluster Configuration
+      pageRef: /docs/monstera/cluster-config/
+      parent: How it works
+      weight: 2
+
+    - name: Units of work
+      pageRef: /docs/monstera/units-of-work/
+      parent: Design principles
+      weight: 1
+    - name: Core Interface
+      pageRef: /docs/monstera/core-interface/
+      parent: Design principles
+      weight: 2
+
+    - name: Core Implementation
+      pageRef: /docs/monstera/core-implementation/
+      parent: Developing
+      weight: 1
+    # - name: Stubs and Adapters
+    #   pageRef: /docs/monstera/stubs-and-adapters/
+    #   parent: Developing
+    #   weight: 2
+    - name: Testing
+      pageRef: /docs/monstera/testing/
+      parent: Developing
+      weight: 3
+#    - name: Migrations
+#      pageRef: /docs/monstera/migrations/
+#      parent: Developing
+#      weight: 4
+    - name: Standalone Application
+      pageRef: /docs/monstera/standalone-application/
+      parent: Developing
+      weight: 5
+
+    grackle:
+    - name: How it works
+      weight: 10
+    - name: API Reference (Preview)
+      weight: 20
+    - name: Everblack Cloud
+      weight: 30
+
+#    - name: Getting Started
+#      pageRef: /docs/grackle/getting-started/
+#      parent: How it works
+#      weight: 1
+    - name: Concepts
+      pageRef: /docs/grackle/concepts/
+      parent: How it works
+      weight: 2
+    - name: Locks
+      pageRef: /docs/grackle/locks/
+      parent: How it works
+      weight: 3
+    - name: Semaphores
+      pageRef: /docs/grackle/semaphores/
+      parent: How it works
+      weight: 4
+    - name: Wait Groups
+      pageRef: /docs/grackle/wait-groups/
+      parent: How it works
+      weight: 5
+
+    - name: CreateNamespace
+      pageRef: /docs/grackle/api/preview/create_namespace/
+      parent: API Reference (Preview)
+      weight: 1
+    - name: ListNamespaces
+      pageRef: /docs/grackle/api/preview/list_namespaces/
+      parent: API Reference (Preview)
+      weight: 2
+    - name: GetNamespace
+      pageRef: /docs/grackle/api/preview/get_namespace/
+      parent: API Reference (Preview)
+      weight: 3
+    - name: DeleteNamespace
+      pageRef: /docs/grackle/api/preview/delete_namespace/
+      parent: API Reference (Preview)
+      weight: 4
+    - name: UpdateNamespace
+      pageRef: /docs/grackle/api/preview/update_namespace/
+      parent: API Reference (Preview)
+      weight: 5
+    - name: AcquireLock
+      pageRef: /docs/grackle/api/preview/acquire_lock/
+      parent: API Reference (Preview)
+      weight: 6
+    - name: ReleaseLock
+      pageRef: /docs/grackle/api/preview/release_lock/
+      parent: API Reference (Preview)
+      weight: 7
+    - name: GetLock
+      pageRef: /docs/grackle/api/preview/get_lock/
+      parent: API Reference (Preview)
+      weight: 8
+    - name: DeleteLock
+      pageRef: /docs/grackle/api/preview/delete_lock/
+      parent: API Reference (Preview)
+      weight: 9
+    - name: CreateSemaphore
+      pageRef: /docs/grackle/api/preview/create_semaphore/
+      parent: API Reference (Preview)
+      weight: 10
+    - name: ListSemaphores
+      pageRef: /docs/grackle/api/preview/list_semaphores/
+      parent: API Reference (Preview)
+      weight: 11
+    - name: GetSemaphore
+      pageRef: /docs/grackle/api/preview/get_semaphore/
+      parent: API Reference (Preview)
+      weight: 12
+    - name: AcquireSemaphore
+      pageRef: /docs/grackle/api/preview/acquire_semaphore/
+      parent: API Reference (Preview)
+      weight: 13
+    - name: ReleaseSemaphore
+      pageRef: /docs/grackle/api/preview/release_semaphore/
+      parent: API Reference (Preview)
+      weight: 14
+    - name: UpdateSemaphore
+      pageRef: /docs/grackle/api/preview/update_semaphore/
+      parent: API Reference (Preview)
+      weight: 15
+    - name: DeleteSemaphore
+      pageRef: /docs/grackle/api/preview/delete_semaphore/
+      parent: API Reference (Preview)
+      weight: 16
+    - name: CreateWaitGroup
+      pageRef: /docs/grackle/api/preview/create_wait_group/
+      parent: API Reference (Preview)
+      weight: 17
+    - name: ListWaitGroups
+      pageRef: /docs/grackle/api/preview/list_wait_groups/
+      parent: API Reference (Preview)
+      weight: 18
+    - name: GetWaitGroup
+      pageRef: /docs/grackle/api/preview/get_wait_group/
+      parent: API Reference (Preview)
+      weight: 19
+    - name: DeleteWaitGroup
+      pageRef: /docs/grackle/api/preview/delete_wait_group/
+      parent: API Reference (Preview)
+      weight: 20
+    - name: AddJobsToWaitGroup
+      pageRef: /docs/grackle/api/preview/add_jobs_to_wait_group/
+      parent: API Reference (Preview)
+      weight: 21
+    - name: CompleteJobFromWaitGroup
+      pageRef: /docs/grackle/api/preview/complete_job_from_wait_group/
+      parent: API Reference (Preview)
+      weight: 22
+
+#    - name: Pricing
+#      pageRef: /docs/grackle/pricing/
+#      parent: Everblack Cloud
+#      weight: 1
+    - name: Service Limits
+      pageRef: /docs/grackle/limits/
+      parent: Everblack Cloud
+      weight: 2

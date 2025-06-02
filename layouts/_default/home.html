@@ -1,0 +1,220 @@
+{{ define "main" }}
+
+<main class="container">
+    <div class="row border-bottom mb-5">
+        <section class="col-lg-7 py-5">
+            <h2 class="display-5 mb-3 fw-semibold lh-sm">Build simple, secure, scalable systems with Everblack</h2>
+        </section>
+    </div>
+
+    <section class="col-lg my-5">
+        <h2 class="display-4 mb-3 fw-semibold lh-sm">Monstera</h2>
+        <p class="lead fw-normal mb-5">
+            Open source framework for building scalable stateful applications in Go. All Everblack services are
+            powered by Monstera.
+        </p>
+        <a href="/docs/monstera" class="btn btn-primary btn-lg">Get Started</a>
+    </section>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-bounding-box-circles text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Scalability</h3>
+                <p>Monstera cluster is horizontally scalable. Applications are sharded, and shards can split even further
+                    as they grow with no downtime.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-cloud-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">High availability</h3>
+                <p>Each shard is replicated with Raft. Writes are performed on the leader, reads can be performed on the
+                    leader for strong consistency or on followers for eventual consistency. There is no single point of
+                    failure in Monstera cluster.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-speedometer text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">High performance</h3>
+                <p>Data and compute are brought together into a single process. You are free to use any in-memory data
+                    structure or embedded database. Unlock the full power of Go to write your business logic.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 border-bottom">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-database-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Transactions</h3>
+                <p>Updates are applied sequentially, so you get serializable transactions out of the box.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-bug text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Local development</h3>
+                <p>No need to run the whole cluster locally. It can be run in standalone mode as a single process which
+                    allows you to attach debugger and explore things end to end.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-patch-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Testability</h3>
+                <p>By design, application cores are easily testable with unit tests, no mocks required.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="col-lg my-5">
+        <h2 class="display-4 mb-3 fw-semibold lh-sm">Moab</h2>
+        <p class="lead fw-normal mb-5">
+            Moab is a fully managed service that simplifies working with asynchronous tasks at scale.
+        </p>
+        <a href="/docs/moab" class="btn btn-primary btn-lg">Get Started</a>
+    </section>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-database-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Durability</h3>
+                <p>All enqueued tasks are persisted and replicated. A task can be removed only by an explicit confirmation from a worker
+                    that a task was successfully completed.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-box-arrow-down text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Pull-based model</h3>
+                <p>Workers periodically pull (dequeue) tasks from queues, allowing simple scaling of the workers fleet. Workers are
+                    stateless. No poison pills ever. You can monitor queue size and the age of the oldest task in real time.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-arrow-clockwise text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Automatic retries</h3>
+                <p>Failed tasks are automatically retried. Even in the event of worker crash. Retry strategy can be configured for a
+                    queue or for each individual task. That guarantees at-least-once execution.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-calendar-event text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Scheduled Tasks</h3>
+                <p>Moab allows you to schedule the time (delay) when a task will be executed.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-hourglass-split text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Tasks Expiration</h3>
+                <p>Tasks that are set to expire can run as long as they want, but an expiring task must be picked up before the
+                    expiration time. Expiration time can be set on each task individually.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-1-circle text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Unique Tasks</h3>
+                <p>Moab makes sure there is only a single copy of a task with a given key in the queue. You can choose to leave the
+                    original task or rewrite it (if payload or scheduled time is different).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-clock text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Long running tasks</h3>
+                <p>Tasks can run for hours or days as long as workers keep reporting them in-progress.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-calendar-week text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Built-in Cron</h3>
+                <p>Schedule periodic tasks with built-in Cron.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-shield-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Security</h3>
+                <p>Payload can be end-to-end encrypted. IAM roles allow granular control to queues and operations. Each API request is
+                    signed. API keys can be revoked.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 border-bottom">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-speedometer text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Rate Limiter</h3>
+                <p>Moab has a built-in rate limiter that works across all workers. Rate limiter is implemented with Token Bucket algorithm.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-bar-chart-steps text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Concurrency Limiter</h3>
+                <p>Regardless of how many workers are pulling tasks from a queue Moab can also limit the number of inflight tasks.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-pause-circle text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Pause a queue</h3>
+                <p>You can pause dequeuing from a queue with a single command. For example, in an emergency scenario.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="col-lg my-5">
+        <h2 class="display-4 mb-3 fw-semibold lh-sm">Grackle</h2>
+        <p class="lead fw-normal mb-5">
+            Distributed synchronization primitives as a service.
+        </p>
+        <a href="/docs/grackle" class="btn btn-primary btn-lg">Get Started</a>
+    </section>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-file-earmark-lock text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Primitives</h3>
+                <ul>
+                    <li>Read/Write Locks</li>
+                    <li>Semaphores</li>
+                    <li>Wait Groups</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-hourglass-split text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Expiration</h3>
+                <p>All holds have a set expiration time. Process crash will not cause a dangling lock. Long-running processes
+                    can extend the hold.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-hammer text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Simple API</h3>
+                <p>All operations are atomic and safe to retry.</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+{{ end }}

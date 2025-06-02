@@ -1,0 +1,59 @@
+{{ define "main" }}
+
+<div class="container py-3">
+
+    {{ if or .Site.Params.options.listCategoryFilter .Site.Params.options.listTagFilter }}
+        <div class="row mb-3">
+
+            {{ if .Site.Params.options.listCategoryFilter }}
+                <div class="col-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="feather me-2"><use href="{{ `images/feather/feather-sprite.svg#folder` | relURL }}"/></svg>
+                    {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages.ByTitle }}
+                        <a class="badge text-bg-light nav-link" href="{{.RelPermalink}}">{{.Title}}</a>&nbsp;
+                    {{end}}
+                </div>
+            {{ end }}
+
+            {{ if .Site.Params.options.listTagFilter }}
+                <div class="col-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="feather me-2"><use href="{{ `images/feather/feather-sprite.svg#tag` | relURL }}"/></svg>
+                    {{range ($.Site.GetPage "taxonomyTerm" "tags").Pages.ByTitle }}
+                        <a class="badge text-bg-light nav-link" href="{{.RelPermalink}}">{{.Title}}</a>&nbsp;
+                    {{end}}
+                </div>
+            {{ end }}
+
+        </div>
+    {{ end }}
+
+    {{ if ne .Kind "taxonomy" }}
+
+        {{ range .Pages }}
+        <div class="row mb-5">
+            <div class="col">
+                <a class="text-decoration-none" href="{{.RelPermalink}}"><h2 class="text-primary">{{ .Title }}</h2></a>
+
+                <div class="text-muted mb-3">
+                    <i class="bi bi-person"></i>
+                    {{ .Params.author }}
+                    &nbsp;
+                    <i class="bi bi-calendar-event"></i>
+                    <time datetime="{{ .Lastmod.Format `2006-01-02T15:04:05Z0700` | safeHTML }}">{{ .Lastmod | time.Format ":date_long" }}</time>
+                </div>
+
+                <div>
+                    {{ with .Params.description }}
+                        {{ . }}
+                    {{ else }}
+                        {{ .Summary | truncate 400 }}
+                    {{ end }}
+                </div>
+
+            </div>
+        </div>
+        {{ end }}
+
+    {{ end }}
+
+</div>
+{{ end }}

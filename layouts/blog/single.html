@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<div class="container py-3">
+  <h1>{{ .Title }}</h1>
+
+  <div class="text-muted mb-5">
+    <i class="bi bi-person"></i>
+    {{ .Params.author }}
+    &nbsp;
+    <i class="bi bi-calendar-event"></i>
+    <time datetime="{{ .Lastmod.Format `2006-01-02T15:04:05Z0700` | safeHTML }}">{{ .Lastmod | time.Format ":date_long" }}</time>
+  </div>
+
+  {{ .Content }}
+</div>
+
+{{ end }}

@@ -1,0 +1,81 @@
+html {
+    overflow-y: scroll;
+}
+
+.jumbotron {
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+    background-color: var(--bs-light);
+    border-radius: .3rem;  
+}
+
+%callout-shared {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    background-color: var(--bd-callout-bg, var(--bs-gray-100));
+    border-left: 0.25rem solid var(--bd-callout-border, var(--bs-gray-300))
+}
+
+blockquote {
+    @extend %callout-shared;
+    text-align: center;
+}
+
+.callout {
+    @extend %callout-shared;
+}
+
+.callout-info {
+    --bd-callout-bg: rgba(var(--bs-info-rgb), .075);
+    --bd-callout-border: rgba(var(--bs-info-rgb), .5)
+}
+
+.callout-warning {
+    --bd-callout-bg: rgba(var(--bs-warning-rgb), .075);
+    --bd-callout-border: rgba(var(--bs-warning-rgb), .5)
+}
+
+.callout-danger {
+    --bd-callout-bg: rgba(var(--bs-danger-rgb), .075);
+    --bd-callout-border: rgba(var(--bs-danger-rgb), .5)
+}
+
+
+a /*.feather*/ {
+    $twitter-blue: #55acee;
+    $github-black: #000;
+
+    .feather-twitter:hover {
+        stroke: $twitter-blue;
+        fill: $twitter-blue;
+    }
+
+    .feather-github:hover {
+        stroke: $github-black;
+        fill: $github-black;
+    }
+}
+
+.highlight {
+    @extend .border;
+    @extend .p-3;
+    @extend .rounded;
+    @extend .mb-5;
+}
+
+.bd-links-link {
+  padding: .1875rem .5rem;
+  margin-top: .125rem;
+  color: var(--bs-body-color);
+  text-decoration: none;
+}
+
+.bd-links-link:hover, .bd-links-link:focus, .bd-links-link.active {
+  color: var(--bs-emphasis-color);
+  background-color: var(--bs-light);
+}
+
+.feature-icon {
+    font-size: 2em;
+}

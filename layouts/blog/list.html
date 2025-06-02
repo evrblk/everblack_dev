@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<div class="container py-3">
+    <h1 class="mb-5">Everblack Blog</h1>
+
+    {{ range .Pages }}
+    <div class="row mb-5">
+        <div class="col">
+            <a class="text-decoration-none" href="{{.RelPermalink}}"><h3 class="text-primary">{{ .Title }}</h3></a>
+
+            <div class="text-muted mb-3">
+                <i class="bi bi-person"></i>
+                {{ .Params.author }}
+                &nbsp;
+                <i class="bi bi-calendar-event"></i>
+                <time datetime="{{ .Lastmod.Format `2006-01-02T15:04:05Z0700` | safeHTML }}">{{ .Lastmod | time.Format ":date_long" }}</time>
+            </div>
+
+            <div>
+                {{ with .Params.description }}
+                    {{ . }}
+                {{ else }}
+                    {{ .Summary | truncate 400 }}
+                {{ end }}
+            </div>
+
+        </div>
+    </div>
+    {{ end }}
+
+</div>
+{{ end }}
