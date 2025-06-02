@@ -21,7 +21,8 @@
             <i class="bi bi-bounding-box-circles text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Scalability</h3>
-                <p>Monstera cluster is horizontally scalable. Applications are sharded, and shards can split even further
+                <p>Monstera cluster is horizontally scalable. Applications are sharded, and shards can split even
+                    further
                     as they grow with no downtime.</p>
             </div>
         </div>
@@ -82,7 +83,8 @@
             <i class="bi bi-database-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Durability</h3>
-                <p>All enqueued tasks are persisted and replicated. A task can be removed only by an explicit confirmation from a worker
+                <p>All enqueued tasks are persisted and replicated. A task can be removed only by an explicit
+                    confirmation from a worker
                     that a task was successfully completed.</p>
             </div>
         </div>
@@ -90,15 +92,18 @@
             <i class="bi bi-box-arrow-down text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Pull-based model</h3>
-                <p>Workers periodically pull (dequeue) tasks from queues, allowing simple scaling of the workers fleet. Workers are
-                    stateless. No poison pills ever. You can monitor queue size and the age of the oldest task in real time.</p>
+                <p>Workers periodically pull (dequeue) tasks from queues, allowing simple scaling of the workers fleet.
+                    Workers are
+                    stateless. No poison pills ever. You can monitor queue size and the age of the oldest task in real
+                    time.</p>
             </div>
         </div>
         <div class="col d-flex align-items-start">
             <i class="bi bi-arrow-clockwise text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Automatic retries</h3>
-                <p>Failed tasks are automatically retried. Even in the event of worker crash. Retry strategy can be configured for a
+                <p>Failed tasks are automatically retried. Even in the event of worker crash. Retry strategy can be
+                    configured for a
                     queue or for each individual task. That guarantees at-least-once execution.</p>
             </div>
         </div>
@@ -116,7 +121,8 @@
             <i class="bi bi-hourglass-split text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Tasks Expiration</h3>
-                <p>Tasks that are set to expire can run as long as they want, but an expiring task must be picked up before the
+                <p>Tasks that are set to expire can run as long as they want, but an expiring task must be picked up
+                    before the
                     expiration time. Expiration time can be set on each task individually.</p>
             </div>
         </div>
@@ -124,7 +130,8 @@
             <i class="bi bi-1-circle text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Unique Tasks</h3>
-                <p>Moab makes sure there is only a single copy of a task with a given key in the queue. You can choose to leave the
+                <p>Moab makes sure there is only a single copy of a task with a given key in the queue. You can choose
+                    to leave the
                     original task or rewrite it (if payload or scheduled time is different).</p>
             </div>
         </div>
@@ -149,7 +156,8 @@
             <i class="bi bi-shield-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Security</h3>
-                <p>Payload can be end-to-end encrypted. IAM roles allow granular control to queues and operations. Each API request is
+                <p>Payload can be end-to-end encrypted. IAM roles allow granular control to queues and operations. Each
+                    API request is
                     signed. API keys can be revoked.</p>
             </div>
         </div>
@@ -160,21 +168,24 @@
             <i class="bi bi-speedometer text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Rate Limiter</h3>
-                <p>Moab has a built-in rate limiter that works across all workers. Rate limiter is implemented with Token Bucket algorithm.</p>
+                <p>Moab has a built-in rate limiter that works across all workers. Rate limiter is implemented with
+                    Token Bucket algorithm.</p>
             </div>
         </div>
         <div class="col d-flex align-items-start">
             <i class="bi bi-bar-chart-steps text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Concurrency Limiter</h3>
-                <p>Regardless of how many workers are pulling tasks from a queue Moab can also limit the number of inflight tasks.</p>
+                <p>Regardless of how many workers are pulling tasks from a queue Moab can also limit the number of
+                    inflight tasks.</p>
             </div>
         </div>
         <div class="col d-flex align-items-start">
             <i class="bi bi-pause-circle text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Pause a queue</h3>
-                <p>You can pause dequeuing from a queue with a single command. For example, in an emergency scenario.</p>
+                <p>You can pause dequeuing from a queue with a single command. For example, in an emergency scenario.
+                </p>
             </div>
         </div>
     </div>
@@ -187,7 +198,7 @@
         <a href="/docs/grackle" class="btn btn-primary btn-lg">Get Started</a>
     </section>
 
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 border-bottom">
         <div class="col d-flex align-items-start">
             <i class="bi bi-file-earmark-lock text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
@@ -203,7 +214,8 @@
             <i class="bi bi-hourglass-split text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
                 <h3 class="fs-2 text-body-emphasis">Expiration</h3>
-                <p>All holds have a set expiration time. Process crash will not cause a dangling lock. Long-running processes
+                <p>All holds have a set expiration time. Process crash will not cause a dangling lock. Long-running
+                    processes
                     can extend the hold.</p>
             </div>
         </div>
@@ -212,6 +224,64 @@
             <div>
                 <h3 class="fs-2 text-body-emphasis">Simple API</h3>
                 <p>All operations are atomic and safe to retry.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="col-lg my-5">
+        <h2 class="display-4 mb-3 fw-semibold lh-sm">Bison</h2>
+        <p class="lead fw-normal mb-5">
+            Fully managed IoT-oriented timeseries database.
+        </p>
+        <a href="/docs/bison" class="btn btn-primary btn-lg">Get Started</a>
+    </section>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-folder text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Structured data</h3>
+                <p>Timeseries are organized into buckets with trees of folders. That makes it easy to navigate in
+                    millions of timeseries.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-code-square text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Strongly typed</h3>
+                <p>All timeseries and expressions are strongly typed: integer, float, string, boolean, struct, enum.
+                    Data is validated at the time of ingestion.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-archive text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Flexible retention</h3>
+                <p>Retention policy can be set on a per-timeseries basis, starting from 1 day up to infinity.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-funnel text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Aggregations</h3>
+                <p>Built-in functions for aggregating by time and downsampling.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-code-square text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Expressions</h3>
+                <p>Flexible formulas for transforming data.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-bell text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Alerts</h3>
+                <p>Alerts can be configured to notify you when a timeseries exceeds a certain threshold.</p>
             </div>
         </div>
     </div>
