@@ -1,82 +1,24 @@
 {{ define "main" }}
 
 <main class="container">
-    <div class="row border-bottom mb-5">
+    <div class="row border-bottom mb-5 pb-5">
         <section class="col-lg-7 py-5">
             <h2 class="display-5 mb-3 fw-semibold lh-sm">Build simple, secure, scalable systems with Everblack</h2>
         </section>
     </div>
 
-    <section class="col-lg my-5">
-        <h2 class="display-4 mb-3 fw-semibold lh-sm">Monstera</h2>
-        <p class="lead fw-normal mb-5">
-            Open source framework for building scalable stateful applications in Go. All Everblack services are
-            powered by Monstera.
-        </p>
-        <a href="/docs/monstera" class="btn btn-primary btn-lg">Get Started</a>
-    </section>
-
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-        <div class="col d-flex align-items-start">
-            <i class="bi bi-bounding-box-circles text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">Scalability</h3>
-                <p>Monstera cluster is horizontally scalable. Applications are sharded, and shards can split even
-                    further
-                    as they grow with no downtime.</p>
-            </div>
+    <div class="row my-5 py-5">
+        <div class="col-3">
+            <img class="img-fluid" src="/images/moab.jpg">
         </div>
-        <div class="col d-flex align-items-start">
-            <i class="bi bi-cloud-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">High availability</h3>
-                <p>Each shard is replicated with Raft. Writes are performed on the leader, reads can be performed on the
-                    leader for strong consistency or on followers for eventual consistency. There is no single point of
-                    failure in Monstera cluster.</p>
-            </div>
-        </div>
-        <div class="col d-flex align-items-start">
-            <i class="bi bi-speedometer text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">High performance</h3>
-                <p>Data and compute are brought together into a single process. You are free to use any in-memory data
-                    structure or embedded database. Unlock the full power of Go to write your business logic.</p>
-            </div>
+        <div class="col-9">
+            <h2 class="display-4 mb-3 fw-semibold lh-sm">Moab</h2>
+            <p class="lead fw-normal mb-5">
+                Moab is a fully managed service that simplifies working with asynchronous tasks at scale.
+            </p>
+            <a href="/docs/moab" class="btn btn-primary btn-lg">Get Started</a>
         </div>
     </div>
-
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 border-bottom">
-        <div class="col d-flex align-items-start">
-            <i class="bi bi-database-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">Transactions</h3>
-                <p>Updates are applied sequentially, so you get serializable transactions out of the box.</p>
-            </div>
-        </div>
-        <div class="col d-flex align-items-start">
-            <i class="bi bi-bug text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">Local development</h3>
-                <p>No need to run the whole cluster locally. It can be run in standalone mode as a single process which
-                    allows you to attach debugger and explore things end to end.</p>
-            </div>
-        </div>
-        <div class="col d-flex align-items-start">
-            <i class="bi bi-patch-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
-            <div>
-                <h3 class="fs-2 text-body-emphasis">Testability</h3>
-                <p>By design, application cores are easily testable with unit tests, no mocks required.</p>
-            </div>
-        </div>
-    </div>
-
-    <section class="col-lg my-5">
-        <h2 class="display-4 mb-3 fw-semibold lh-sm">Moab</h2>
-        <p class="lead fw-normal mb-5">
-            Moab is a fully managed service that simplifies working with asynchronous tasks at scale.
-        </p>
-        <a href="/docs/moab" class="btn btn-primary btn-lg">Get Started</a>
-    </section>
 
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="col d-flex align-items-start">
@@ -190,13 +132,18 @@
         </div>
     </div>
 
-    <section class="col-lg my-5">
-        <h2 class="display-4 mb-3 fw-semibold lh-sm">Grackle</h2>
-        <p class="lead fw-normal mb-5">
-            Distributed synchronization primitives as a service.
-        </p>
-        <a href="/docs/grackle" class="btn btn-primary btn-lg">Get Started</a>
-    </section>
+    <div class="row my-5 py-5">
+        <div class="col-3">
+            <img class="img-fluid" src="/images/grackle.jpg">
+        </div>
+        <div class="col-9">
+            <h2 class="display-4 mb-3 fw-semibold lh-sm">Grackle</h2>
+            <p class="lead fw-normal mb-5">
+                Distributed synchronization primitives as a service.
+            </p>
+            <a href="/docs/grackle" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+    </div>
 
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 border-bottom">
         <div class="col d-flex align-items-start">
@@ -228,13 +175,18 @@
         </div>
     </div>
 
-    <section class="col-lg my-5">
-        <h2 class="display-4 mb-3 fw-semibold lh-sm">Bison</h2>
-        <p class="lead fw-normal mb-5">
-            Fully managed IoT-oriented timeseries storage and data catalog management system.
-        </p>
-        <a class="btn btn-primary btn-lg disabled">Coming soon</a>
-    </section>
+    <div class="row g-4 my-5 py-5">
+        <div class="col-3">
+            <img class="img-fluid" src="/images/bison.jpg">
+        </div>
+        <div class="col-9">
+            <h2 class="display-4 mb-3 fw-semibold lh-sm">Bison</h2>
+            <p class="lead fw-normal mb-5">
+                Fully managed IoT-oriented timeseries storage and data catalog management system.
+            </p>
+            <a class="btn btn-primary btn-lg disabled">Coming soon</a>
+        </div>
+    </div>
 
     <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
         <div class="col d-flex align-items-start">
@@ -262,7 +214,7 @@
         </div>
     </div>
 
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 border-bottom">
         <div class="col d-flex align-items-start">
             <i class="bi bi-funnel text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
             <div>
@@ -282,6 +234,75 @@
             <div>
                 <h3 class="fs-2 text-body-emphasis">Alerts</h3>
                 <p>Alerts can be configured to notify you when a timeseries exceeds a certain threshold.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-5 py-5">
+        <div class="col-3">
+            <img class="img-fluid" src="/images/monstera.jpg">
+        </div>
+        <div class="col-9">
+            <h2 class="display-4 mb-3 fw-semibold lh-sm">Monstera</h2>
+            
+            <p class="lead fw-normal mb-5">
+                Open source framework for building scalable stateful applications in Go. All Everblack services are
+                powered by Monstera.
+            </p>
+            <a href="/docs/monstera" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-bounding-box-circles text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Scalability</h3>
+                <p>Monstera cluster is horizontally scalable. Applications are sharded, and shards can split even
+                    further
+                    as they grow with no downtime.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-cloud-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">High availability</h3>
+                <p>Each shard is replicated with Raft. Writes are performed on the leader, reads can be performed on the
+                    leader for strong consistency or on followers for eventual consistency. There is no single point of
+                    failure in Monstera cluster.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-speedometer text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">High performance</h3>
+                <p>Data and compute are brought together into a single process. You are free to use any in-memory data
+                    structure or embedded database. Unlock the full power of Go to write your business logic.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-database-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Transactions</h3>
+                <p>Updates are applied sequentially, so you get serializable transactions out of the box.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-bug text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Local development</h3>
+                <p>No need to run the whole cluster locally. It can be run in standalone mode as a single process which
+                    allows you to attach debugger and explore things end to end.</p>
+            </div>
+        </div>
+        <div class="col d-flex align-items-start">
+            <i class="bi bi-patch-check text-body-secondary flex-shrink-0 me-3 feature-icon"></i>
+            <div>
+                <h3 class="fs-2 text-body-emphasis">Testability</h3>
+                <p>By design, application cores are easily testable with unit tests, no mocks required.</p>
             </div>
         </div>
     </div>
