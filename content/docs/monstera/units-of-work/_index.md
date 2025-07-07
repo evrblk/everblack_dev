@@ -14,8 +14,12 @@ processed by a single program with all necessary data in proximity. An applicati
 growth: simply by the number of units of work. Your entire domain will be most likely split into multiple application 
 cores. However, not all the logic will be implemented inside those cores, some stateless things are implemented outside.
 
-The ideal situation for extracting units of work is when your domain is organized hierarchically. For example, Everblack 
-Grackle, a service that provides distributed synchronization primitives (locks, semaphores, wait groups):
+This concept is similar to sharding/partitioning of databases (manual sharding, Vitess style, DynamoDB style, etc).
+A shard key is picked once in the begining and cannot be changed later. All related data is co-located 
+on the same shard and can be wraped into a transaction or queried with secondary (sort) key.
+
+The ideal situation for extracting units of work is when your domain is organized hierarchically. For example, [Everblack 
+Grackle](/docs/grackle), a service that provides distributed synchronization primitives (locks, semaphores, wait groups):
 
 {{< figure src="locks1.png" class="py-5" >}}
 
@@ -50,7 +54,8 @@ first place. Because an application core is mirroring a part of the domain, this
 Having 50-100 namespaces per account should be more than enough for most use cases. Even 1000 namespaces is still around 
 a megabyte of data. Each namespace can have 1M or even 10M active locks (there is nothing to store if it is not locked). 
 Not every large system can perform 1M concurrent operations on a single type of objects. And 1M locks is roughly a 
-gigabyte of data, which is small enough to fit on a single machine.
+gigabyte of data, which is small enough to fit on a single machine. The domain can also help estimating the throughput.
+"Hot partition" is a real problem here, but the domain can suggest how hot it can actually be.
 
 On another side a unit of work should be big enough to benefit from having data in proximity. What does it mean? All 
 update operations on a given unit are performed sequentially by a single process. This gives serializable transactions
@@ -64,23 +69,12 @@ out of the box (and no race conditions). It makes sense to use this transactiona
 * Conditional updates
 * etc
 
-Continuing with Everblack Grackle example:
-
-* A lock can be locked for writes if it is unlocked.
-* A lock can not be locked for writes it is locked for reads.
-* A lock can be locked for reads by process X if it is locked for reads by other processes.
-* A lock can be locked for writes again if it is already locked for writes by this process.
-* A semaphore can be locked if the current number of lock holders is less than the total number of permits.
-* A semaphore can be locked again if it is already locked by this process even if there are no permits left.
-* etc
-
----
+## Considerations
 
 This approach might not work for you if:
 
 * The data cannot be represented as a hierarchy at all or there are multiple different ways to build hierarchies from it.
-* There is no domain aspect that can be used as a boundary for unit size.
+* There is no domain aspect that can be used as a boundary for unit size or throughput.
 * You are not sure that this will not change in the future.
-
-
-__TODO__
+* Transactions must cover several units (if money is moved from one account to another, then an account cannot be
+  a unit of work).

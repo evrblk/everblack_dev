@@ -278,13 +278,17 @@ menus:
       pageRef: /docs/monstera/cluster-config/
       parent: How it works
       weight: 2
+    - name: Code Generation
+      pageRef: /docs/monstera/code-generation/
+      parent: How it works
+      weight: 3
 
     - name: Units of work
       pageRef: /docs/monstera/units-of-work/
       parent: Design principles
       weight: 1
-    - name: Core Interface
-      pageRef: /docs/monstera/core-interface/
+    - name: Core Principles
+      pageRef: /docs/monstera/core-principles/
       parent: Design principles
       weight: 2
 

@@ -39,7 +39,7 @@ cores are fully self-contained and do not have any side effects. There are two t
 * **Updates**: any operation that modifies internal state along the way can also return arbitrary results.
 * **Reads**: any operation that only returns some results.
 
-All updates are replicated _before_ they are applied to an application core. Updates are applied sequentially in a single
+All updates are replicated **before** they are applied to an application core. Updates are applied sequentially in a single
 thread. Essentially, it gives you serializable transactions out of the box, which allows you to perform complex operations
 with a simple and highly testable code.
 
@@ -88,12 +88,8 @@ workers. A single cluster can handle multiple application cores (colored differe
 ensures better resource utilization. The mapping of replicas to nodes is pushed to each client, there is no single 
 service that is responsible for managing the mapping. That minimizes the number of network calls and points of failure.  
 
-## Canonical Example
+## Examples
 
-Monstera framework does not force any particular application core implementation, method routing mechanism, or any 
-specific wire format. It is up to you to define that. However, over time I developed a certain style of how all
-Everblack services are implemented. This is not a part of the framework, but it can be copy-pasted or used as an 
-inspiration.
-
-Go to [github.com/evrblk/monstera-example](https://github.com/evrblk/monstera-example) repository and follow 
-`README.md`. 
+There are several examples of how to build applications with Monstera framework. They are based on popular System Design
+type interview questions. Examples are complete and runnable. Go to 
+[github.com/evrblk/monstera-example](https://github.com/evrblk/monstera-example) repository and follow `README.md`.

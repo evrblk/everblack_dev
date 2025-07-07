@@ -25,7 +25,7 @@ things only. There are two main reasons for that:
   an application core should not change after a refactoring.
 * In Monstera Read and Update messages are the public contract for interacting with cores. Update messages are stored in
   Raft log and can be replayed later. All cores should be deterministic and stable (see 
-  [Application Cores](/docs/monstera/cores)). So it is very important to make sure that this behavior is unchanged.
+  [Core Principles](/docs/monstera/core-principles)). So it is very important to make sure that this behavior is unchanged.
 
 Test scenarios would look like a sequence of commands to bring a machine to a specific expected state following with a
 verification of that state. Since updates are applied sequentially in Monstera we do not need to accommodate for race
