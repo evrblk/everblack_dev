@@ -2,15 +2,11 @@
 title: Concepts
 type: docs
 layout: grackle
-aliases:
-  - /docs/grackle/
 ---
 
 Everblack Grackle provides distributed synchronisation primitives: read/write locks, semaphores, and wait groups.
 
-All primitives are organized into **Namespaces**. Primitive names are unique within a namespace. There is a soft limit 
-on the total number of primitives of each type per namespace. See [Service Limits](/docs/grackle/limits) for more 
-details.
+All primitives are organized into **Namespaces**. Primitive names are unique within a namespace.
 
 Primitives are used by **Processes** - parts of a client application. Although this is not enforced by Grackle, 
 typically a lock is acquired and released by the same process. For that purpose, processes are referred by 

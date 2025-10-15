@@ -4,4 +4,19 @@ type: docs
 layout: grackle
 ---
 
-__TODO__
+Deletes a lock.
+
+Request:
+
+```json
+{
+  "namespace_name": "UserObjects",
+  "lock_name": "user_object_12345667890"
+}
+```
+
+Response:
+
+```json
+{}
+```

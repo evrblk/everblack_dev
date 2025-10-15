@@ -4,4 +4,21 @@ type: docs
 layout: grackle
 ---
 
-__TODO__
+Deletes a namespace.
+
+All locks, semaphores, and wait groups will also be deleted. 
+
+Request:
+
+```json
+{
+  "name": "UserObjects"
+}
+```
+
+Response:
+
+```json
+{}
+```
+

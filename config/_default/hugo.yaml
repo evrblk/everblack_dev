@@ -308,8 +308,8 @@ menus:
 #      pageRef: /docs/monstera/migrations/
 #      parent: Developing
 #      weight: 4
-    - name: Standalone Application
-      pageRef: /docs/monstera/standalone-application/
+    - name: Nonclustered Mode
+      pageRef: /docs/monstera/nonclustered-mode/
       parent: Developing
       weight: 5
 
@@ -321,26 +321,30 @@ menus:
     - name: Everblack Cloud
       weight: 30
 
-#    - name: Getting Started
-#      pageRef: /docs/grackle/getting-started/
-#      parent: How it works
-#      weight: 1
+    - name: Overview
+      pageRef: /docs/grackle/overview/
+      parent: How it works
+      weight: 1
+    - name: Getting Started
+      pageRef: /docs/grackle/getting-started/
+      parent: How it works
+      weight: 2
     - name: Concepts
       pageRef: /docs/grackle/concepts/
       parent: How it works
-      weight: 2
+      weight: 3
     - name: Locks
       pageRef: /docs/grackle/locks/
       parent: How it works
-      weight: 3
+      weight: 4
     - name: Semaphores
       pageRef: /docs/grackle/semaphores/
       parent: How it works
-      weight: 4
+      weight: 5
     - name: Wait Groups
       pageRef: /docs/grackle/wait-groups/
       parent: How it works
-      weight: 5
+      weight: 6
 
     - name: CreateNamespace
       pageRef: /docs/grackle/api/preview/create_namespace/
@@ -378,58 +382,62 @@ menus:
       pageRef: /docs/grackle/api/preview/delete_lock/
       parent: API Reference (Preview)
       weight: 9
+    - name: ListLocks
+      pageRef: /docs/grackle/api/preview/list_locks/
+      parent: API Reference (Preview)
+      weight: 10
     - name: CreateSemaphore
       pageRef: /docs/grackle/api/preview/create_semaphore/
       parent: API Reference (Preview)
-      weight: 10
+      weight: 11
     - name: ListSemaphores
       pageRef: /docs/grackle/api/preview/list_semaphores/
       parent: API Reference (Preview)
-      weight: 11
+      weight: 12
     - name: GetSemaphore
       pageRef: /docs/grackle/api/preview/get_semaphore/
       parent: API Reference (Preview)
-      weight: 12
+      weight: 13
     - name: AcquireSemaphore
       pageRef: /docs/grackle/api/preview/acquire_semaphore/
       parent: API Reference (Preview)
-      weight: 13
+      weight: 14
     - name: ReleaseSemaphore
       pageRef: /docs/grackle/api/preview/release_semaphore/
       parent: API Reference (Preview)
-      weight: 14
+      weight: 15
     - name: UpdateSemaphore
       pageRef: /docs/grackle/api/preview/update_semaphore/
       parent: API Reference (Preview)
-      weight: 15
+      weight: 16
     - name: DeleteSemaphore
       pageRef: /docs/grackle/api/preview/delete_semaphore/
       parent: API Reference (Preview)
-      weight: 16
+      weight: 17
     - name: CreateWaitGroup
       pageRef: /docs/grackle/api/preview/create_wait_group/
       parent: API Reference (Preview)
-      weight: 17
+      weight: 18
     - name: ListWaitGroups
       pageRef: /docs/grackle/api/preview/list_wait_groups/
       parent: API Reference (Preview)
-      weight: 18
+      weight: 19
     - name: GetWaitGroup
       pageRef: /docs/grackle/api/preview/get_wait_group/
       parent: API Reference (Preview)
-      weight: 19
+      weight: 20
     - name: DeleteWaitGroup
       pageRef: /docs/grackle/api/preview/delete_wait_group/
       parent: API Reference (Preview)
-      weight: 20
+      weight: 21
     - name: AddJobsToWaitGroup
       pageRef: /docs/grackle/api/preview/add_jobs_to_wait_group/
       parent: API Reference (Preview)
-      weight: 21
+      weight: 22
     - name: CompleteJobFromWaitGroup
       pageRef: /docs/grackle/api/preview/complete_job_from_wait_group/
       parent: API Reference (Preview)
-      weight: 22
+      weight: 23
 
 #    - name: Pricing
 #      pageRef: /docs/grackle/pricing/

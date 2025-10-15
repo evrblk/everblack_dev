@@ -15,7 +15,7 @@ There should be no gaps between shards nor overlaps. Shards are referred by ids 
 cluster. Theoretically, up to 2^32 shards per application is possible.
 
 Each application has a configurable replication factor, which defines the minimum number of **replicas** for each shard.
-Replicas are also referred by unique ids. Replicas are assigned to **nodes**. Each node has an id and an address of its
+Replicas are also referred by unique ids. Replicas are assigned to **nodes**. Each node is referred by an address of its
 Monstera server including port (that allows to run several nodes on a single machine for development purposes). Two 
 replicas of the same shard cannot be assigned to the same node. Replicas are assigned to nodes at creation and cannot be 
 moved.
@@ -37,64 +37,59 @@ Here is an example of `cluster_config.json` file:
       "implementation": "Buckets",
       "shards": [
         {
-          "id": "shrd_db30f4de",
-          "lowerBound": "AAAAAA==",
-          "upperBound": "D////w==",
-          "globalIndexPrefix": "oSKiDGmzUN4=",
+          "id": "Buckets_00_0f",
+          "lower_bound": "00",
+          "upper_bound": "0f",
           "replicas": [
             {
-              "id": "rpl_b2acb652",
-              "nodeId": "nd_9eccdbe"
+              "id": "Buckets_00_0f_b2acb652",
+              "node_address": "ip-10-0-10-63.us-west-2.compute.internal:7000"
             },
             {
-              "id": "rpl_4322c41c",
-              "nodeId": "nd_b46208f3"
+              "id": "Buckets_00_0f_4322c41c",
+              "node_address": "ip-10-0-10-78.us-west-2.compute.internal:7000"
             },
             {
-              "id": "rpl_3c877939",
-              "nodeId": "nd_6417411c"
+              "id": "Buckets_00_0f_3c877939",
+              "node_address": "ip-10-0-10-14.us-west-2.compute.internal:7000"
             }
           ]
         },
         {
-          "id": "shrd_489d3fed",
-          "lowerBound": "EAAAAA==",
-          "upperBound": "H////w==",
-          "globalIndexPrefix": "IZv4OSOj8ns=",
+          "id": "Buckets_10_1f",
+          "lower_bound": "10",
+          "upper_bound": "1f",
           "replicas": [
             {
-              "id": "rpl_7c1aedef",
-              "nodeId": "nd_6417411c"
+              "id": "Buckets_10_1f_7c1aedef",
+              "node_address": "ip-10-0-10-14.us-west-2.compute.internal:7000"
             },
             {
-              "id": "rpl_c64fa750",
-              "nodeId": "nd_9eccdbe"
+              "id": "Buckets_10_1f_c64fa750",
+              "node_address": "ip-10-0-10-63.us-west-2.compute.internal:7000"
             },
             {
-              "id": "rpl_a4944668",
-              "nodeId": "nd_b46208f3"
+              "id": "Buckets_10_1f_a4944668",
+              "node_address": "ip-10-0-10-78.us-west-2.compute.internal:7000"
             }
           ]
         },
         //...
       ],
-      "replicationFactor": 3
+      "replication_factor": 3
     }
   ],
   "nodes": [
     {
-      "id": "nd_b46208f3",
       "address": "ip-10-0-10-78.us-west-2.compute.internal:7000"
     },
     {
-      "id": "nd_6417411c",
       "address": "ip-10-0-10-14.us-west-2.compute.internal:7000"
     },
     {
-      "id": "nd_9eccdbe",
       "address": "ip-10-0-10-63.us-west-2.compute.internal:7000"
     }
   ],
-  "updatedAt": "1750710750467"
+  "updated_at": "1750710750467"
 }
 ```

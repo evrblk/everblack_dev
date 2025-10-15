@@ -4,4 +4,19 @@ type: docs
 layout: grackle
 ---
 
-__TODO__
+Deletes a wait group.
+
+Request:
+
+```json
+{
+  "namespace_name": "mynamespace",
+  "wait_group_name": "wg_123"
+}
+```
+
+Response:
+
+```json
+{}
+```
