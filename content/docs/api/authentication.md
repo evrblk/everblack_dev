@@ -19,8 +19,17 @@ Every API request should have the following gRPC headers:
 * `evrblk-signature` - A signature of a given request
 * `evrblk-timestamp` - A timestamp of a given request (Unix time in seconds)
 
-Timestamps are used to prevent [Replay Attacks](https://en.wikipedia.org/wiki/Replay_attack). Each request should be 
-timestamped within `[now - 5 min; now + 5 min]` interval to allow for some clock drift.
+A signature is calculated for a combination of:
+
+* Timestamp
+* Service name (i.e. `Moab`)
+* Method name (i.e. `CreateQueue`)
+* Protobuf serialized request body
+
+Timestamps, service and method names are used to prevent [Replay Attacks](https://en.wikipedia.org/wiki/Replay_attack). 
+Each request should be timestamped within `[now - 5 min; now + 5 min]` interval to allow for some clock drift. Service
+and method names help distinguish between similar payloads, for example `GetQueue{queue_name: "my_queue"}` and 
+`DeleteQueue{queue_name: "my_queue"}` have the same request body.
 
 There are several supported authentication mechanisms that go by names: __Alfa__, and __Bravo__. They use
 different signing methods, vary in performance, and trust level. If new mechanisms appear in the future, or there is a 
@@ -41,7 +50,7 @@ Pseudocode on the client side:
 ```text
 timestamp_bytes = int64_to_bytes(timestamp) // 8 bytes big endian of Unix timestamp
 request_bytes = proto_marshall(request) // binary proto representation of a request 
-data = timestamp_bytes + request_bytes
+data = timestamp_bytes + service_name + "." + method_name + request_bytes
 signature = p256_sign(private_key, data)
 ```
 
@@ -50,7 +59,7 @@ Pseudocode on the server side:
 ```text
 timestamp_bytes = int64_to_bytes(timestamp) // 8 bytes big endian of Unix timestamp
 request_bytes = proto_marshall(request) // binary proto representation of a request 
-data = timestamp_bytes + request_bytes
+data = timestamp_bytes + service_name + "." + method_name + request_bytes
 result = p256_verify(public_key, data)
 ```
 
@@ -90,7 +99,7 @@ request_bytes = proto_marshall(request) // binary proto representation of a requ
 date = dateOf(timestamp)
 date_bytes = format(date) // date in "YYYY-MM-DD" format
 hashed_secret = sha256(secret, date_bytes)
-data = timestamp_bytes + request_bytes
+data = timestamp_bytes + service_name + "." + method_name + request_bytes
 signature = hmac_sha256(hashed_secret, data)
 ```
 
@@ -102,7 +111,7 @@ request_bytes = proto_marshall(request) // binary proto representation of a requ
 date = dateOf(timestamp)
 date_bytes = format(date) // date in "YYYY-MM-DD" format
 hashed_secret = sha256(secret + date)
-data = timestamp_bytes + request_bytes
+data = timestamp_bytes + service_name + "." + method_name + request_bytes
 expected_signature = hmac_sha256(hashed_secret, data)
 result = actual_signature == expected_signature
 ```

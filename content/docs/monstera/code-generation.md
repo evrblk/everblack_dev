@@ -73,8 +73,8 @@ This config will generate:
 * `TinyUrlServiceCoreApi` - interface for the stub `TinyUrlService` which consists of methods from `ShortUrls` and 
   `Users` application cores. There are two generated implementations of this interface:
   * `TinyUrlServiceCoreApiMonsteraStub` - the stub that wraps Monstera Client. All the routing is done there.
-  * `TinyUrlServiceCoreApiStandaloneStub` - standalone stub. See 
-    [Standalone Application](/docs/monstera/standalone-application) for more details.
+  * `TinyUrlServiceCoreApiNonclusteredStub` - nonclustered stub. See 
+    [Nonclustered Mode](/docs/monstera/nonclustered-mode) for more details.
 * `ShortUrlsCoreAdapter` and `UsersCoreAdapter` - adapters for corresponding application cores `ShortUrls` and 
   `Users`.
 * `ShortUrlsCoreApi` and `UsersCoreApi` - interfaces for application cores. 

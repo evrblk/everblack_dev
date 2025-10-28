@@ -90,6 +90,10 @@ service that is responsible for managing the mapping. That minimizes the number 
 
 ## Examples
 
-There are several examples of how to build applications with Monstera framework. They are based on popular System Design
-type interview questions. Examples are complete and runnable. Go to 
-[github.com/evrblk/monstera-example](https://github.com/evrblk/monstera-example) repository and follow `README.md`.
+There are several examples of how to build applications with Monstera framework.
+
+* Grackle [github.com/evrblk/grackle](https://github.com/evrblk/grackle) - a production ready system for distributed 
+  synchronization primitives.
+* Toy examples that are based on popular System Design type interview questions 
+  [github.com/evrblk/monstera-example](https://github.com/evrblk/monstera-example). Examples are complete and runnable. 
+  Go to repository and follow `README.md`.
